@@ -93,5 +93,18 @@ namespace WindowsFormsApp5
                 timer2.Start();
             }
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Result resultado;
+            if (pictureBox1.Image != null) 
+            {
+                resultado = Reader.Decode((Bitmap)pictureBox1.Image);
+                if(resultado != null)
+                {
+                    lblArticulo.Text = DetalleDeProducto(resultado.Text);
+                }
+            }
+        }
     }
 }
