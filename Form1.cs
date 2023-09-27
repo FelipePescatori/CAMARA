@@ -1,7 +1,6 @@
 ﻿using Emgu.CV;
 using Emgu.Util;
 using ZXing;
-//
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -34,7 +33,6 @@ namespace WindowsFormsApp5
             Camra = new VideoCapture();
             Reader = new BarcodeReader();
             timer1.Interval = 40;
-            timer2.Interval = 250;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             lblArticulo.Text = string.Empty;
             rdApagar.Checked = true;
@@ -78,9 +76,7 @@ namespace WindowsFormsApp5
         private void rdApagar_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            timer2.Stop();
             timer1.Enabled = false;
-            timer2.Enabled = false;
             Camra.Stop();
         }
         private void rdEncender_Click(object sender, EventArgs e)
@@ -90,20 +86,6 @@ namespace WindowsFormsApp5
             {
                 timer1.Enabled = true;
                 timer1.Start();
-                timer2.Start();
-            }
-        }
-
-        private void timer2_Tick(object sender, EventArgs e)
-        {
-            Result resultado;
-            if (pictureBox1.Image != null) 
-            {
-                resultado = Reader.Decode((Bitmap)pictureBox1.Image);
-                if(resultado != null)
-                {
-                    lblArticulo.Text = DetalleDeProducto(resultado.Text);
-                }
             }
         }
     }
