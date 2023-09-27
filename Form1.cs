@@ -46,7 +46,7 @@ namespace WindowsFormsApp5
         {
             Articulos = new List<Articulos> { };
             {
-                new Articulos(7790199603863, "Masitas");
+                new Articulos(7790199603862, "Masitas");
                 new Articulos(77945678910111214, "Manzana");
             }
         }
