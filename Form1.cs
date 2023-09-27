@@ -34,7 +34,7 @@ namespace WindowsFormsApp5
             Reader = new BarcodeReader();
             timer1.Interval = 40;
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            lblArticulo.Text = string.Empty;
+            txtContenido.Text = string.Empty;
             rdApagar.Checked = true;
             CargarArticulos();
         }
@@ -44,8 +44,8 @@ namespace WindowsFormsApp5
         {
             Articulos = new List<Articulos> { };
             {
-                new Articulos(7790199603862, "Masitas");
-                new Articulos(77945678910111214, "Manzana");
+                new Articulos(7790199603863, "Masitas");
+                new Articulos(5901234123457, "Manzana");
             }
         }
         private string DetalleDeProducto(string CodigoDeBarra)
@@ -55,7 +55,7 @@ namespace WindowsFormsApp5
             if (!string.IsNullOrEmpty(CodigoDeBarra))
             {
                 var Articulo = Articulos.FirstOrDefault(art => art.Articulosid == long.Parse(CodigoDeBarra));
-                if (Articulo == null)
+                if (Articulo != null)
                 {
                     Detalle = Articulo.Detalle;
                 }
@@ -86,6 +86,19 @@ namespace WindowsFormsApp5
             {
                 timer1.Enabled = true;
                 timer1.Start();
+            }
+        }
+
+        private void btnAgegar_Click(object sender, EventArgs e)
+        {
+            Result Resultado;
+            if (pictureBox1.Image != null)
+            {
+                Resultado = Reader.Decode((Bitmap)pictureBox1.Image);
+                if (Resultado != null)
+                {
+                    txtContenido.Text = Resultado.Text;
+                }
             }
         }
     }

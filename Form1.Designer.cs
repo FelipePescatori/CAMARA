@@ -33,9 +33,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.rdApagar = new System.Windows.Forms.RadioButton();
             this.rdEncender = new System.Windows.Forms.RadioButton();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblArticulo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,7 +42,7 @@
             this.btnAgegar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.txtContenido = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -53,10 +51,9 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtContenido);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.listBox1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.lblArticulo);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -98,15 +95,6 @@
             this.rdEncender.UseVisualStyleBackColor = true;
             this.rdEncender.Click += new System.EventHandler(this.rdEncender_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(52, 47);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(162, 196);
-            this.listBox1.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -116,32 +104,23 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "CAMRA";
             // 
-            // lblArticulo
-            // 
-            this.lblArticulo.AutoSize = true;
-            this.lblArticulo.Location = new System.Drawing.Point(156, 13);
-            this.lblArticulo.Name = "lblArticulo";
-            this.lblArticulo.Size = new System.Drawing.Size(58, 16);
-            this.lblArticulo.TabIndex = 1;
-            this.lblArticulo.Text = "Articulos";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 13);
+            this.label3.Location = new System.Drawing.Point(77, 32);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.Size = new System.Drawing.Size(68, 16);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Articulos";
+            this.label3.Text = "Contenido";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(529, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(131, 16);
+            this.label1.Size = new System.Drawing.Size(104, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "CODIGO DE BARRA";
+            this.label1.Text = "CODIGO DE QR";
             // 
             // pictureBox1
             // 
@@ -172,12 +151,13 @@
             // 
             // btnAgegar
             // 
-            this.btnAgegar.Location = new System.Drawing.Point(344, 65);
+            this.btnAgegar.Location = new System.Drawing.Point(445, 78);
             this.btnAgegar.Name = "btnAgegar";
             this.btnAgegar.Size = new System.Drawing.Size(131, 34);
             this.btnAgegar.TabIndex = 0;
             this.btnAgegar.Text = "Agegar";
             this.btnAgegar.UseVisualStyleBackColor = true;
+            this.btnAgegar.Click += new System.EventHandler(this.btnAgegar_Click);
             // 
             // btnSalir
             // 
@@ -192,9 +172,13 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // timer2
+            // txtContenido
             // 
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            this.txtContenido.Location = new System.Drawing.Point(46, 70);
+            this.txtContenido.Multiline = true;
+            this.txtContenido.Name = "txtContenido";
+            this.txtContenido.Size = new System.Drawing.Size(151, 211);
+            this.txtContenido.TabIndex = 2;
             // 
             // Form1
             // 
@@ -225,15 +209,13 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.RadioButton rdApagar;
         private System.Windows.Forms.RadioButton rdEncender;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblArticulo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAgegar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.TextBox txtContenido;
     }
 }
 
